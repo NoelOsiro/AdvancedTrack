@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "Please enter a number"
+read number
+factors=()
+# 2 is the smallest prime factor, loop from 2 to given number
+#
+for (( factor=2; factor<=number; factor++ ))
+    do
+        while [ $(( number % $factor )) == 0 ]
+        do
+            factors+=($factor)
+            number=$(( number / $factor ))
+        done
+    done
+echo ${factors[@]}
+
